@@ -3,8 +3,8 @@ name: Log Execution Time
 # 手動実行と定期実行に対応
 on:
   workflow_dispatch:   # 手動実行
-  schedule:           # 定期実行（例: 毎日10:00）
-    - cron: '*/1 * * * *'
+  # schedule:           # 定期実行（例: 毎日10:00）
+  #   - cron: '*/1 * * * *'
 
 jobs:
   run-script:
