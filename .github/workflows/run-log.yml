@@ -1,0 +1,23 @@
+name: Log Execution Time
+
+# 手動実行と定期実行に対応
+on:
+  workflow_dispatch:   # 手動実行
+  schedule:           # 定期実行（例: 毎日10:00）
+    - cron: '0 10 * * *'
+
+jobs:
+  run-script:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+      - name: Run log_time.py
+        run: |
+          python log_time.py
+      - name: Show log file
+        run: |
+          cat execution_log.txt
