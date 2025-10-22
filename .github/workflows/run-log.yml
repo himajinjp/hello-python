@@ -4,7 +4,7 @@ name: Log Execution Time
 on:
   workflow_dispatch:   # 手動実行
   schedule:           # 定期実行（例: 毎日10:00）
-    - cron: '0 10 * * *'
+    - cron: '*/1 * * * *'
 
 jobs:
   run-script:
